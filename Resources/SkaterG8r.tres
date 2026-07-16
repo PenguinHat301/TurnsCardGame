@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bl8woef3tmos2"]
+
+[ext_resource type="Texture2D" uid="uid://cclv4d3fopj6" path="res://Sprites/Skater_G8R.png" id="1_364qx"]
+[ext_resource type="Script" uid="uid://bvg7kblbnvwea" path="res://Scripts/CardData.gd" id="1_euvt4"]
+
+[resource]
+script = ExtResource("1_euvt4")
+cardID = 1
+artWork = ExtResource("1_364qx")
+name = "Skater G8r"
+description = "Coolest gator on the block. Honestly enough said, I mean look at 'em go!"
+healthStat = "2"
+attackStat = "2"
+metadata/_custom_type_script = "uid://bvg7kblbnvwea"

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dc7jr6j3ed31y"]
+
+[ext_resource type="PackedScene" uid="uid://brm6g2ehob335" path="res://Scenes/card_base.tscn" id="1_t7cu6"]
+[ext_resource type="Resource" uid="uid://bl8woef3tmos2" path="res://Resources/SkaterG8r.tres" id="2_0g826"]
+
+[node name="CardBase" unique_id=1032648314 instance=ExtResource("1_t7cu6")]
+card_data = ExtResource("2_0g826")

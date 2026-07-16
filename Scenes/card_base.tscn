@@ -7,31 +7,31 @@
 layout_mode = 3
 anchor_right = 0.23300001
 anchor_bottom = 0.63100004
-offset_right = -0.41601563
-offset_bottom = 0.111968994
+offset_right = -18.416016
+offset_bottom = -8.888031
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_s20b5")
-ID = null
-cardID = null
 
 [node name="Artwork" type="TextureRect" parent="." unique_id=1874860272]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
 offset_top = 30.0
-offset_right = -8.0
-offset_bottom = -129.0
+offset_bottom = -120.0
 texture = ExtResource("1_lof8i")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=250649579]
+z_index = 1
 layout_mode = 0
-offset_left = 9.0
-offset_top = 2.0
-offset_right = 257.0
-offset_bottom = 22.0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 250.0
+offset_bottom = 23.0
 text = "Placeholder Name
 "
 scroll_active = false
@@ -39,41 +39,46 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="." unique_id=1799107046]
+z_index = 1
 layout_mode = 0
-offset_left = 10.0
+offset_left = 5.0
 offset_top = 286.0
-offset_right = 260.0
+offset_right = 246.0
 offset_bottom = 371.0
 text = "Placeholder Description"
+fit_content = true
 
 [node name="HealthLabel" type="RichTextLabel" parent="." unique_id=1154159264]
+z_index = 1
 layout_mode = 0
-offset_top = 380.0
-offset_right = 34.0
-offset_bottom = 410.0
+offset_left = 2.0
+offset_top = 368.0
+offset_right = 36.0
+offset_bottom = 398.0
 text = "P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AttackLabel" type="RichTextLabel" parent="." unique_id=1181232507]
+z_index = 1
 layout_mode = 0
-offset_left = 235.0
-offset_top = 379.0
-offset_right = 269.0
-offset_bottom = 409.0
+offset_left = 214.0
+offset_top = 368.0
+offset_right = 248.0
+offset_bottom = 398.0
 text = "P"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Background" type="Panel" parent="." unique_id=1199886427]
 layout_mode = 0
-offset_right = 269.0
-offset_bottom = 409.0
+offset_right = 250.0
+offset_bottom = 400.0
 
 [node name="DesPanel" type="Panel" parent="." unique_id=1832696941]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 10.0
+offset_left = 4.0
 offset_top = 286.0
-offset_right = 260.0
+offset_right = 244.0
 offset_bottom = 371.0
