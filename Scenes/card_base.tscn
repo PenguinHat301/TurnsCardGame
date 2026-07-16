@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://brm6g2ehob335"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Sprites/icon.svg" id="1_lof8i"]
+[ext_resource type="Script" uid="uid://d1tmw7wyu2jw8" path="res://Scripts/card_base.gd" id="1_s20b5"]
+
+[node name="CardBase" type="Control" unique_id=1032648314]
+layout_mode = 3
+anchor_right = 0.23300001
+anchor_bottom = 0.63100004
+offset_right = -0.41601563
+offset_bottom = 0.111968994
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s20b5")
+ID = null
+cardID = null
+
+[node name="Artwork" type="TextureRect" parent="." unique_id=1874860272]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 30.0
+offset_right = -8.0
+offset_bottom = -129.0
+texture = ExtResource("1_lof8i")
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=250649579]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 257.0
+offset_bottom = 22.0
+text = "Placeholder Name
+"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=1799107046]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 286.0
+offset_right = 260.0
+offset_bottom = 371.0
+text = "Placeholder Description"
+
+[node name="HealthLabel" type="RichTextLabel" parent="." unique_id=1154159264]
+layout_mode = 0
+offset_top = 380.0
+offset_right = 34.0
+offset_bottom = 410.0
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackLabel" type="RichTextLabel" parent="." unique_id=1181232507]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 379.0
+offset_right = 269.0
+offset_bottom = 409.0
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="Panel" parent="." unique_id=1199886427]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 409.0
+
+[node name="DesPanel" type="Panel" parent="." unique_id=1832696941]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 286.0
+offset_right = 260.0
+offset_bottom = 371.0

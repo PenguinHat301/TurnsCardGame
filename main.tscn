@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="PackedScene" uid="uid://bn84875k83g8k" path="res://Scenes/Chimpy.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node" unique_id=1823231389]
+
+[node name="Players" type="Node" parent="." unique_id=1558427259]
+
+[node name="Board" type="Node2D" parent="." unique_id=1226733955]
+
+[node name="UI" type="Control" parent="." unique_id=45936382]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TurnManager" type="Node" parent="." unique_id=235612690]
+
+[node name="GameManager" type="Node" parent="." unique_id=1584684658]
+
+[node name="GlobalCardList" type="Node" parent="." unique_id=984331383]
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=714661369]
+position = Vector2(580, 324)
+
+[node name="CardBase" parent="." unique_id=1032648314 instance=ExtResource("1_ig7tw")]
+offset_left = 407.792
+offset_top = 186.0
+offset_right = 407.37598
+offset_bottom = 186.11197

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cdtgenlj0eica"]
+
+[ext_resource type="Texture2D" uid="uid://b0k1kuqdl6g88" path="res://Sprites/Chimpy-Sheet.png" id="1_pbwxc"]
+[ext_resource type="Script" uid="uid://bvg7kblbnvwea" path="res://Scripts/CardData.gd" id="1_tka7i"]
+
+[resource]
+script = ExtResource("1_tka7i")
+artWork = ExtResource("1_pbwxc")
+name = "Chimpy"
+description = "I poop, you poop, I throw poop"
+healthStat = "2"
+attackStat = "1"
+metadata/_custom_type_script = "uid://bvg7kblbnvwea"

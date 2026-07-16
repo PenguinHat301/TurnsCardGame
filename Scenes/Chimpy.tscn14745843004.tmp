@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bn84875k83g8k"]
+
+[ext_resource type="PackedScene" uid="uid://brm6g2ehob335" path="res://Scenes/card_base.tscn" id="1_3gqe6"]
+[ext_resource type="Resource" uid="uid://cdtgenlj0eica" path="res://Resources/Chimpy.tres" id="2_vlbnx"]
+
+[node name="CardBase" unique_id=1032648314 instance=ExtResource("1_3gqe6")]
+card_data = ExtResource("2_vlbnx")
