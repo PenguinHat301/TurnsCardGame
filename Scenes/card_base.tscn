@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Sprites/icon.svg" id="1_lof8i"]
 [ext_resource type="Script" uid="uid://d1tmw7wyu2jw8" path="res://Scripts/card_base.gd" id="1_s20b5"]
 
+[sub_resource type="FontVariation" id="FontVariation_h2yge"]
+
 [node name="CardBase" type="Control" unique_id=1032648314]
 layout_mode = 3
 anchor_right = 0.23300001
@@ -32,6 +34,7 @@ offset_left = -1.0
 offset_top = 3.0
 offset_right = 250.0
 offset_bottom = 23.0
+theme_override_fonts/normal_font = SubResource("FontVariation_h2yge")
 text = "Placeholder Name
 "
 scroll_active = false
