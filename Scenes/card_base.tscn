@@ -7,12 +7,16 @@
 
 [node name="CardBase" type="Control" unique_id=1032648314]
 layout_mode = 3
-anchor_right = 0.23300001
-anchor_bottom = 0.63100004
-offset_right = -18.416016
-offset_bottom = -8.888031
+anchor_right = 0.104
+anchor_bottom = 0.296
+offset_left = -124.99999
+offset_top = -199.99998
+offset_right = -74.68
+offset_bottom = -119.67998
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_s20b5")
@@ -25,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 30.0
 offset_bottom = -120.0
+mouse_filter = 2
 texture = ExtResource("1_lof8i")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=250649579]
@@ -34,6 +39,7 @@ offset_left = -1.0
 offset_top = 3.0
 offset_right = 250.0
 offset_bottom = 23.0
+mouse_filter = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_h2yge")
 text = "Placeholder Name
 "
@@ -48,6 +54,7 @@ offset_left = 5.0
 offset_top = 286.0
 offset_right = 246.0
 offset_bottom = 371.0
+mouse_filter = 2
 text = "Placeholder Description"
 fit_content = true
 
@@ -58,6 +65,7 @@ offset_left = 2.0
 offset_top = 368.0
 offset_right = 36.0
 offset_bottom = 398.0
+mouse_filter = 2
 text = "P"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -69,6 +77,7 @@ offset_left = 214.0
 offset_top = 368.0
 offset_right = 248.0
 offset_bottom = 398.0
+mouse_filter = 2
 text = "P"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -77,6 +86,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 400.0
+mouse_filter = 2
 
 [node name="DesPanel" type="Panel" parent="." unique_id=1832696941]
 modulate = Color(0, 0, 0, 1)
@@ -85,3 +95,7 @@ offset_left = 4.0
 offset_top = 286.0
 offset_right = 244.0
 offset_bottom = 371.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_Card_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Card_mouse_exited"]
