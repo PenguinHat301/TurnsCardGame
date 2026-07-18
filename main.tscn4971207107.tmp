@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="PackedScene" uid="uid://kuwe2h6nxw5m" path="res://Scenes/card_slot.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bn84875k83g8k" path="res://Scenes/Cards/Chimpy.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dc7jr6j3ed31y" path="res://Scenes/Cards/SkaterG8r.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b2qvh5elkjfnc" path="res://Scenes/Cards/Chimpy_2D.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://d1tmw7wyu2jw8" path="res://Scripts/card_base.gd" id="5_lquwl"]
+
+[node name="Main" type="Node" unique_id=1823231389]
+
+[node name="GameManager" type="Node" parent="." unique_id=1584684658]
+
+[node name="TurnManager" type="Node" parent="." unique_id=235612690]
+
+[node name="GlobalCardList" type="Node" parent="." unique_id=984331383]
+
+[node name="DrawPile" type="Node" parent="." unique_id=932279612]
+
+[node name="Players" type="Node" parent="." unique_id=1558427259]
+
+[node name="Board" type="Node2D" parent="." unique_id=1226733955]
+
+[node name="CardSlots" type="Node" parent="Board" unique_id=1332781353]
+
+[node name="CardSlot" parent="Board/CardSlots" unique_id=679988220 instance=ExtResource("1_0xm2m")]
+offset_left = 880.7999
+offset_top = 857.96
+offset_right = 881.2002
+offset_bottom = 858.36
+
+[node name="CardSlot2" parent="Board/CardSlots" unique_id=16526429 instance=ExtResource("1_0xm2m")]
+offset_left = 1200.8
+offset_top = 856.95996
+offset_right = 1201.2
+offset_bottom = 857.36
+
+[node name="CardSlot3" parent="Board/CardSlots" unique_id=217330232 instance=ExtResource("1_0xm2m")]
+offset_left = 560.7993
+offset_top = 854.9601
+offset_right = 561.2
+offset_bottom = 855.36
+
+[node name="CardSlot4" parent="Board/CardSlots" unique_id=273112237 instance=ExtResource("1_0xm2m")]
+offset_left = 1520.8003
+offset_top = 856.96014
+offset_right = 1521.2002
+offset_bottom = 857.36
+
+[node name="CardSlot5" parent="Board/CardSlots" unique_id=1714562911 instance=ExtResource("1_0xm2m")]
+offset_left = 1840.8004
+offset_top = 855.9601
+offset_right = 1841.2003
+offset_bottom = 856.36
+
+[node name="CardSlot6" parent="Board/CardSlots" unique_id=828929642 instance=ExtResource("1_0xm2m")]
+offset_left = 880.8
+offset_top = 457.95996
+offset_right = 881.20013
+offset_bottom = 458.36
+
+[node name="CardSlot7" parent="Board/CardSlots" unique_id=1523189 instance=ExtResource("1_0xm2m")]
+offset_left = 1200.8
+offset_top = 456.95984
+offset_right = 1201.2
+offset_bottom = 457.35986
+
+[node name="CardSlot8" parent="Board/CardSlots" unique_id=430533039 instance=ExtResource("1_0xm2m")]
+offset_left = 560.7993
+offset_top = 454.95996
+offset_right = 561.2
+offset_bottom = 455.35986
+
+[node name="CardSlot9" parent="Board/CardSlots" unique_id=1215672677 instance=ExtResource("1_0xm2m")]
+offset_left = 1520.8003
+offset_top = 456.96008
+offset_right = 1521.2002
+offset_bottom = 457.36
+
+[node name="CardSlot10" parent="Board/CardSlots" unique_id=948143265 instance=ExtResource("1_0xm2m")]
+offset_left = 1840.8004
+offset_top = 455.95996
+offset_right = 1841.2003
+offset_bottom = 456.35986
+
+[node name="TempUISetup" type="Node" parent="Board" unique_id=437797232]
+
+[node name="P2Score" type="Panel" parent="Board/TempUISetup" unique_id=669149322]
+modulate = Color(0.8627451, 0.03529412, 0.4862745, 1)
+offset_left = 2123.0
+offset_top = 542.0
+offset_right = 2399.0
+offset_bottom = 663.0
+
+[node name="P1Score" type="Panel" parent="Board/TempUISetup" unique_id=1062671766]
+modulate = Color(0, 0.7063952, 0.70643514, 1)
+offset_left = 2123.0
+offset_top = 662.0
+offset_right = 2399.0
+offset_bottom = 783.0
+
+[node name="FieldCardSlot" type="Panel" parent="Board/TempUISetup" unique_id=1882841478]
+offset_left = 39.0
+offset_top = 431.0
+offset_right = 319.0
+offset_bottom = 896.6842
+
+[node name="CardBase" parent="Board/TempUISetup" unique_id=1032648314 instance=ExtResource("2_0xm2m")]
+anchor_right = 0.109000005
+anchor_bottom = 0.30900002
+offset_left = 52.000122
+offset_top = 904.00037
+offset_right = 92.72011
+offset_bottom = 970.2768
+ID = null
+cardID = null
+
+[node name="CardBase2" parent="Board/TempUISetup" unique_id=1142647794 instance=ExtResource("2_0xm2m")]
+anchor_right = 0.109000005
+anchor_bottom = 0.30900002
+offset_left = 2105.9998
+offset_top = 903.00024
+offset_right = 2146.72
+offset_bottom = 969.27655
+ID = null
+cardID = null
+
+[node name="CardBase3" parent="Board/TempUISetup" unique_id=1904882482 instance=ExtResource("2_0xm2m")]
+anchor_right = 0.109000005
+anchor_bottom = 0.30900002
+offset_left = 52.000122
+offset_top = 24.000473
+offset_right = 92.72011
+offset_bottom = 90.27716
+ID = null
+cardID = null
+
+[node name="CardBase9" parent="Board/TempUISetup" unique_id=953224550 instance=ExtResource("2_0xm2m")]
+anchor_right = 0.109000005
+anchor_bottom = 0.30900002
+offset_left = 2105.9998
+offset_top = 23.000366
+offset_right = 2146.72
+offset_bottom = 89.276825
+ID = null
+cardID = null
+
+[node name="UI" type="Control" parent="." unique_id=45936382]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=714661369]
+modulate = Color(0.3553136, 0.35531354, 0.35531357, 1)
+anchor_mode = 0
+zoom = Vector2(0.8, 0.8)
+
+[node name="CardBase" parent="." unique_id=228950342 instance=ExtResource("3_h2yge")]
+offset_left = 819.0
+offset_top = 1065.0
+offset_right = 869.32
+offset_bottom = 1145.3198
+ID = null
+cardID = null
+
+[node name="card_base_2D" parent="." unique_id=953226452 instance=ExtResource("4_1bvp3")]
+position = Vector2(979, -74)
+script = ExtResource("5_lquwl")
+ID = null
+cardID = null

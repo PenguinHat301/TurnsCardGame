@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="PackedScene" uid="uid://kuwe2h6nxw5m" path="res://Scenes/card_slot.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bn84875k83g8k" path="res://Scenes/Cards/Chimpy.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cym1crtkrufii" path="res://Scenes/card_slot_2d.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bn84875k83g8k" path="res://Depreciated/Chimpy.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b2qvh5elkjfnc" path="res://Scenes/Cards/Chimpy_2D.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node" unique_id=1823231389]
 
@@ -19,65 +20,45 @@
 
 [node name="CardSlots" type="Node" parent="Board" unique_id=1332781353]
 
-[node name="CardSlot" parent="Board/CardSlots" unique_id=679988220 instance=ExtResource("1_0xm2m")]
-offset_left = 880.8
-offset_top = 857.96
-offset_right = 881.20013
-offset_bottom = 858.36
+[node name="CardSlot" parent="Board/CardSlots" unique_id=678445540 instance=ExtResource("1_h2yge")]
+position = Vector2(903.07007, 711.78503)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot2" parent="Board/CardSlots" unique_id=16526429 instance=ExtResource("1_0xm2m")]
-offset_left = 1200.8
-offset_top = 856.95996
-offset_right = 1201.2
-offset_bottom = 857.36
+[node name="CardSlot2" parent="Board/CardSlots" unique_id=358057011 instance=ExtResource("1_h2yge")]
+position = Vector2(1223.0701, 710.7849)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot3" parent="Board/CardSlots" unique_id=217330232 instance=ExtResource("1_0xm2m")]
-offset_left = 560.7993
-offset_top = 854.9601
-offset_right = 561.2
-offset_bottom = 855.36
+[node name="CardSlot3" parent="Board/CardSlots" unique_id=1448963733 instance=ExtResource("1_h2yge")]
+position = Vector2(583.06934, 708.78503)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot4" parent="Board/CardSlots" unique_id=273112237 instance=ExtResource("1_0xm2m")]
-offset_left = 1520.8003
-offset_top = 856.96014
-offset_right = 1521.2002
-offset_bottom = 857.36
+[node name="CardSlot4" parent="Board/CardSlots" unique_id=2068004488 instance=ExtResource("1_h2yge")]
+position = Vector2(1543.0703, 710.78516)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot5" parent="Board/CardSlots" unique_id=1714562911 instance=ExtResource("1_0xm2m")]
-offset_left = 1840.8004
-offset_top = 855.9601
-offset_right = 1841.2003
-offset_bottom = 856.36
+[node name="CardSlot5" parent="Board/CardSlots" unique_id=1170892396 instance=ExtResource("1_h2yge")]
+position = Vector2(1863.0706, 709.78503)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot6" parent="Board/CardSlots" unique_id=828929642 instance=ExtResource("1_0xm2m")]
-offset_left = 880.8
-offset_top = 457.95996
-offset_right = 881.20013
-offset_bottom = 458.36
+[node name="CardSlot6" parent="Board/CardSlots" unique_id=1302931843 instance=ExtResource("1_h2yge")]
+position = Vector2(903.07007, 311.7849)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot7" parent="Board/CardSlots" unique_id=1523189 instance=ExtResource("1_0xm2m")]
-offset_left = 1200.8
-offset_top = 456.95984
-offset_right = 1201.2
-offset_bottom = 457.35986
+[node name="CardSlot7" parent="Board/CardSlots" unique_id=68115271 instance=ExtResource("1_h2yge")]
+position = Vector2(1223.0701, 310.7848)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot8" parent="Board/CardSlots" unique_id=430533039 instance=ExtResource("1_0xm2m")]
-offset_left = 560.7993
-offset_top = 454.95996
-offset_right = 561.2
-offset_bottom = 455.35986
+[node name="CardSlot8" parent="Board/CardSlots" unique_id=1057415124 instance=ExtResource("1_h2yge")]
+position = Vector2(583.06934, 308.7849)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot9" parent="Board/CardSlots" unique_id=1215672677 instance=ExtResource("1_0xm2m")]
-offset_left = 1520.8003
-offset_top = 456.96008
-offset_right = 1521.2002
-offset_bottom = 457.36
+[node name="CardSlot9" parent="Board/CardSlots" unique_id=472038620 instance=ExtResource("1_h2yge")]
+position = Vector2(1543.0703, 310.78503)
+scale = Vector2(0.85, 0.85)
 
-[node name="CardSlot10" parent="Board/CardSlots" unique_id=948143265 instance=ExtResource("1_0xm2m")]
-offset_left = 1840.8004
-offset_top = 455.95996
-offset_right = 1841.2003
-offset_bottom = 456.35986
+[node name="CardSlot10" parent="Board/CardSlots" unique_id=1778382376 instance=ExtResource("1_h2yge")]
+position = Vector2(1863.0706, 309.7849)
+scale = Vector2(0.85, 0.85)
 
 [node name="TempUISetup" type="Node" parent="Board" unique_id=437797232]
 
@@ -143,3 +124,9 @@ offset_bottom = 40.0
 modulate = Color(0.3553136, 0.35531354, 0.35531357, 1)
 anchor_mode = 0
 zoom = Vector2(0.8, 0.8)
+
+[node name="card_base_2D" parent="." unique_id=953226452 instance=ExtResource("4_1bvp3")]
+position = Vector2(1080, 1168)
+
+[node name="card_base_2D2" parent="." unique_id=1259314914 instance=ExtResource("4_1bvp3")]
+position = Vector2(1349, 1171)

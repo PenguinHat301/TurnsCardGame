@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cgow4ss6u7yhj"]
+
+[ext_resource type="Script" uid="uid://fjl2pgcgrtkd" path="res://Scripts/card_base_2D.gd" id="1_ygg0h"]
+[ext_resource type="Texture2D" uid="uid://bdiqvlfn1k2qv" path="res://Sprites/white.jpg" id="2_10hhr"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Sprites/icon.svg" id="3_k4te8"]
+
+[sub_resource type="FontVariation" id="FontVariation_gr7s5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mruv"]
+size = Vector2(91.250015, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pn84"]
+size = Vector2(250.00003, 400.00006)
+
+[node name="card_base_2D" type="Node2D" unique_id=953226452]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_ygg0h")
+
+[node name="Background2" type="Sprite2D" parent="." unique_id=807576453]
+modulate = Color(0.09239707, 0.09239706, 0.09239706, 1)
+position = Vector2(0.004547119, 0.25002658)
+scale = Vector2(0.19562528, 0.40252528)
+texture = ExtResource("2_10hhr")
+
+[node name="Artwork" type="Sprite2D" parent="." unique_id=1432370383]
+position = Vector2(0.009094238, -45.00002)
+scale = Vector2(1.83, 1.83)
+texture = ExtResource("3_k4te8")
+
+[node name="UI" type="Node2D" parent="." unique_id=469363886]
+position = Vector2(-124.99089, -200)
+
+[node name="Name" type="RichTextLabel" parent="UI" unique_id=336437570]
+z_index = 1
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 250.0
+offset_bottom = 23.0
+mouse_filter = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_gr7s5")
+text = "Placeholder Name
+"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="UI" unique_id=1778060980]
+z_index = 1
+offset_left = 5.0
+offset_top = 286.0
+offset_right = 246.0
+offset_bottom = 371.0
+mouse_filter = 2
+text = "Placeholder Description"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthLabel" type="RichTextLabel" parent="UI" unique_id=988960449]
+z_index = 1
+offset_left = 2.0
+offset_top = 368.0
+offset_right = 36.0
+offset_bottom = 398.0
+mouse_filter = 2
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackLabel" type="RichTextLabel" parent="UI" unique_id=1719863890]
+z_index = 1
+offset_left = 214.0
+offset_top = 368.0
+offset_right = 248.0
+offset_bottom = 398.0
+mouse_filter = 2
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DesPanel" type="Panel" parent="UI" unique_id=779398894]
+modulate = Color(0, 0, 0, 1)
+offset_left = 4.0
+offset_top = 286.0
+offset_right = 244.0
+offset_bottom = 371.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SnapArea" type="Area2D" parent="." unique_id=2146538232]
+position = Vector2(0.009040713, -3.4451485e-05)
+scale = Vector2(0.99999964, 0.99999964)
+collision_layer = 2
+collision_mask = 4
+
+[node name="SnapAreaShape" type="CollisionShape2D" parent="SnapArea" unique_id=781288458]
+position = Vector2(1.9073486e-05, -3.7499979)
+shape = SubResource("RectangleShape2D_2mruv")
+
+[node name="HoverDragArea" type="Area2D" parent="." unique_id=618203491]
+position = Vector2(-124.99089, -198.75)
+scale = Vector2(0.9999995, 0.9999995)
+collision_mask = 0
+collision_priority = 2.0
+
+[node name="HoverDragShape" type="CollisionShape2D" parent="HoverDragArea" unique_id=506978843]
+position = Vector2(125.00005, 198.75008)
+shape = SubResource("RectangleShape2D_3pn84")
+
+[connection signal="input_event" from="HoverDragArea" to="." method="_on_hover_drag_area_input_event"]
+[connection signal="mouse_entered" from="HoverDragArea" to="." method="_on_hover_mouse_entered"]
+[connection signal="mouse_exited" from="HoverDragArea" to="." method="_on_hover_mouse_exited"]

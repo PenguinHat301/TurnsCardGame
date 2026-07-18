@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cym1crtkrufii"]
+
+[ext_resource type="Script" uid="uid://x8n18npkfsae" path="res://Scripts/card_slot_2D.gd" id="1_6q0yd"]
+[ext_resource type="Texture2D" uid="uid://bdiqvlfn1k2qv" path="res://Sprites/white.jpg" id="1_16b74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q0yd"]
+size = Vector2(232.9412, 378.82358)
+
+[node name="card_slot_2D" type="Node2D" unique_id=678445540]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_6q0yd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=563248513]
+modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
+position = Vector2(0.5555725, -0.9444275)
+scale = Vector2(0.19092333, 0.3949495)
+texture = ExtResource("1_16b74")
+
+[node name="SlotShape" type="Area2D" parent="." unique_id=1777536926]
+position = Vector2(-124.44443, -201.44444)
+scale = Vector2(1.0000001, 1.0000001)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlotShape" unique_id=1533965590]
+position = Vector2(125.00005, 201.17656)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_6q0yd")
+
+[node name="Border" type="Line2D" parent="." unique_id=1753545254]
+position = Vector2(-118.06267, -193.78416)
+scale = Vector2(0.9636363, 0.969121)
+points = PackedVector2Array(-2, 0, -2, 400, 248, 400, 248, -1, -7, -1)
+default_color = Color(0.8238889, 0.8295574, 0.85281944, 1)
+texture_mode = 1

@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Sprites/icon.svg" id="1_lof8i"]
 [ext_resource type="Script" uid="uid://d1tmw7wyu2jw8" path="res://Scripts/card_base.gd" id="1_s20b5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pn84"]
+size = Vector2(91.250015, 205)
+
 [sub_resource type="FontVariation" id="FontVariation_h2yge"]
 
 [node name="CardBase" type="Control" unique_id=1032648314]
@@ -20,6 +23,14 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_s20b5")
+
+[node name="SnapArea" type="Area2D" parent="." unique_id=1771600392]
+position = Vector2(124.99997, 199.99997)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="SnapAreaShape" type="CollisionShape2D" parent="SnapArea" unique_id=334287669]
+position = Vector2(1.9073486e-05, -3.7499979)
+shape = SubResource("RectangleShape2D_3pn84")
 
 [node name="Artwork" type="TextureRect" parent="." unique_id=1874860272]
 z_index = 1
