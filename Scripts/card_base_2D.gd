@@ -23,16 +23,20 @@ var curDragOffset: Vector2 # used for moving the card
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ID = 0 # temporary placeholder
-	cardID = card_data.cardID
 	isDraggable = true
 	self.originalPosition = position
-	
-	$Artwork.texture = card_data.artWork
+	_initialize(card_data)
+
+func _initialize(cardData: CardData):
+	self.originalPosition = Vector2(1250, 1250)
+	self.card_data = cardData
+	self.z_index = 5
+	$Artwork.texture = cardData.artWork
 	$Artwork.scale = Vector2(5.0,5.0)
-	$UI/Name.text = card_data.name
-	$UI/Description.text = card_data.description
-	$UI/HealthLabel.text = card_data.healthStat
-	$UI/AttackLabel.text = card_data.attackStat
+	$UI/Name.text = cardData.name
+	$UI/Description.text = cardData.description
+	$UI/HealthLabel.text = cardData.healthStat
+	$UI/AttackLabel.text = cardData.attackStat
 
 
 func _process(delta: float) -> void:
@@ -41,15 +45,19 @@ func _process(delta: float) -> void:
 
 
 func _on_hover_mouse_entered() -> void:
+	if GeneralManager.draggingCard != null and GeneralManager.draggingCard != self:
+		return
+	
 	self.z_index = 100
 	self.scale = Vector2(1.0,1.0)
 
 
 func _on_hover_mouse_exited() -> void:
-	self.z_index = 0
+	self.z_index = 5
 	self.scale = Vector2(0.8,0.8)
 
 
+# True if it snaps, false if it returns to original spot
 func _Card_Snap_Behavior() -> bool:
 	overlappingAreas = snap_area_self.get_overlapping_areas()
 	if !overlappingAreas.is_empty():
@@ -58,8 +66,9 @@ func _Card_Snap_Behavior() -> bool:
 		cardSlot = snap_area_slot.get_parent()
 		if cardSlot.occupied == false:
 			cardSlot.occupied = true
-			self.set_position(cardSlot.position)
+			self.global_position = cardSlot.global_position
 			self.isDraggable = false
+			self.z_index = 5
 			print("Snap")
 			return true
 		else:
@@ -70,16 +79,21 @@ func _Card_Snap_Behavior() -> bool:
 		return false
 
 
+# area for hovering and dragging
 func _on_hover_drag_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-		if event is InputEventMouseButton:
-			if event.button_index == MOUSE_BUTTON_LEFT:
-				if event.pressed and isDraggable:
-					isDragging = true
-					z_index = 100
-					curDragOffset = get_global_mouse_position() - global_position
-				elif isDragging:
-					isDragging = false
-					z_index = 0
-					curDragOffset = Vector2.ZERO
-					if !_Card_Snap_Behavior():
-						global_position = originalPosition
+	if GeneralManager.draggingCard != null and GeneralManager.draggingCard != self:
+		return
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and isDraggable:
+				isDragging = true
+				GeneralManager.draggingCard = self
+				z_index = 100
+				curDragOffset = get_global_mouse_position() - global_position
+			elif isDragging:
+				isDragging = false
+				z_index = 0
+				GeneralManager.draggingCard = null
+				curDragOffset = Vector2.ZERO
+				if !_Card_Snap_Behavior():
+					global_position = originalPosition

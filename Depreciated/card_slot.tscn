@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kuwe2h6nxw5m"]
 
-[ext_resource type="Script" uid="uid://cw0mccd6fmkg5" path="res://Scripts/card_slot.gd" id="1_2yd5i"]
+[ext_resource type="Script" uid="uid://cw0mccd6fmkg5" path="res://Depreciated/card_slot.gd" id="1_2yd5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pn84"]
 size = Vector2(232.9412, 378.82358)

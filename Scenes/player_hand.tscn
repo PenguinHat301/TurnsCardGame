@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cmru2al5fusp4"]
+
+[ext_resource type="Script" uid="uid://cg4fx03q48s3v" path="res://Scripts/player_hand.gd" id="1_xhqds"]
+[ext_resource type="Texture2D" uid="uid://bdiqvlfn1k2qv" path="res://Sprites/white.jpg" id="2_fvenh"]
+
+[node name="PlayerHand" type="Node2D" unique_id=2058784465]
+script = ExtResource("1_xhqds")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1399044429]
+self_modulate = Color(0, 0, 0, 0.6901961)
+scale = Vector2(1.2059251, 0.3521401)
+texture = ExtResource("2_fvenh")
+
+[node name="Border" type="Line2D" parent="." unique_id=1027597117]
+points = PackedVector2Array(-771, -175, -771, 177, 774, 177, 774, -175, -776, -175)

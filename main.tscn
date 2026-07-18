@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
+[ext_resource type="PackedScene" uid="uid://cpcvlo2b4al3i" path="res://Scenes/player.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cym1crtkrufii" path="res://Scenes/card_slot_2d.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bn84875k83g8k" path="res://Depreciated/Chimpy.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://b2qvh5elkjfnc" path="res://Scenes/Cards/Chimpy_2D.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node" unique_id=1823231389]
 
@@ -10,11 +10,10 @@
 
 [node name="TurnManager" type="Node" parent="." unique_id=235612690]
 
-[node name="GlobalCardList" type="Node" parent="." unique_id=984331383]
-
-[node name="DrawPile" type="Node" parent="." unique_id=932279612]
-
 [node name="Players" type="Node" parent="." unique_id=1558427259]
+
+[node name="Player" parent="Players" unique_id=225357707 instance=ExtResource("1_1bvp3")]
+position = Vector2(1245, 1139)
 
 [node name="Board" type="Node2D" parent="." unique_id=1226733955]
 
@@ -108,9 +107,3 @@ offset_bottom = 40.0
 modulate = Color(0.3553136, 0.35531354, 0.35531357, 1)
 anchor_mode = 0
 zoom = Vector2(0.8, 0.8)
-
-[node name="card_base_2D" parent="." unique_id=953226452 instance=ExtResource("4_1bvp3")]
-position = Vector2(1080, 1168)
-
-[node name="card_base_2D2" parent="." unique_id=1259314914 instance=ExtResource("4_1bvp3")]
-position = Vector2(1349, 1171)

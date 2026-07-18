@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://uki6yak7u6tv"]
+
+[ext_resource type="Script" uid="uid://cibp66jivyh8" path="res://Scripts/draw_pile.gd" id="1_7ms5k"]
+[ext_resource type="Texture2D" uid="uid://bdiqvlfn1k2qv" path="res://Sprites/white.jpg" id="1_771hf"]
+[ext_resource type="Texture2D" uid="uid://cixu3jcixxjng" path="res://Sprites/Wabbit.png" id="2_7ms5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60m8s"]
+size = Vector2(232.9412, 378.82358)
+
+[node name="DrawPile" type="Node2D" unique_id=1350543172]
+script = ExtResource("1_7ms5k")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1129903065]
+modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
+position = Vector2(0.5555725, -0.9444275)
+scale = Vector2(0.19092333, 0.3949495)
+texture = ExtResource("1_771hf")
+
+[node name="DeckSprite" type="Sprite2D" parent="." unique_id=1567652003]
+position = Vector2(0, 64)
+scale = Vector2(5, 5)
+texture = ExtResource("2_7ms5k")
+
+[node name="SlotShape" type="Area2D" parent="." unique_id=1981690235]
+visible = false
+position = Vector2(-124.44443, -201.44444)
+scale = Vector2(1.0000001, 1.0000001)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlotShape" unique_id=603428642]
+position = Vector2(125.00005, 201.17656)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_60m8s")
+
+[node name="Border" type="Line2D" parent="." unique_id=1399369730]
+position = Vector2(-118.06267, -193.78416)
+scale = Vector2(0.9636363, 0.969121)
+points = PackedVector2Array(-2, 0, -2, 400, 248, 400, 248, -1, -7, -1)
+default_color = Color(0.8238889, 0.8295574, 0.85281944, 1)
+texture_mode = 1
+
+[node name="UI" type="Node2D" parent="." unique_id=534396347]
+
+[node name="DrawLabel" type="RichTextLabel" parent="UI" unique_id=444434072]
+offset_left = -107.0
+offset_top = -182.0
+offset_right = 109.0
+offset_bottom = -122.0
+theme_override_constants/outline_size = 30
+theme_override_constants/text_highlight_h_padding = 0
+theme_override_font_sizes/normal_font_size = 27
+text = "DRAW PILE"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumCardLabel" type="Label" parent="UI" unique_id=935070625]
+offset_left = -23.0
+offset_top = -124.0
+offset_right = 23.0
+offset_bottom = -74.23854
+theme_override_font_sizes/font_size = 31
+text = "#"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TestAdd" type="Button" parent="UI" unique_id=1947052729]
+offset_left = 142.0
+offset_top = -161.0
+offset_right = 272.0
+offset_bottom = -31.0
+text = "Add card
+Index 0"
+
+[node name="TestDraw" type="Button" parent="UI" unique_id=1746300825]
+offset_left = 142.0
+offset_top = 8.0
+offset_right = 272.0
+offset_bottom = 138.0
+text = "Draw Card"
+
+[connection signal="pressed" from="UI/TestAdd" to="." method="_on_testing_button_pressed"]
+[connection signal="pressed" from="UI/TestDraw" to="." method="_on_test_draw_pressed"]

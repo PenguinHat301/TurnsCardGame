@@ -1,14 +1,11 @@
-extends Node2D
-class_name card_slot_2D
+extends Node
 
-var occupied: bool
-var spotID: int #0 to 4 player 1, 5 to 9 for player 2
-@export var slotSnap: bool
-@export var cardHeld: card_base_2D
+@onready var draw_pile: draw_pile = $DrawPile
+@onready var player_hand: Node2D = $PlayerHand
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.z_index = 1
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
