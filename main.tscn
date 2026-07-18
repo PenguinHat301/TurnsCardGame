@@ -82,14 +82,6 @@ offset_top = 431.0
 offset_right = 319.0
 offset_bottom = 896.6842
 
-[node name="CardBase" parent="Board/TempUISetup" unique_id=1032648314 instance=ExtResource("2_0xm2m")]
-anchor_right = 0.109000005
-anchor_bottom = 0.30900002
-offset_left = 52.000122
-offset_top = 904.00037
-offset_right = 92.72011
-offset_bottom = 970.2768
-
 [node name="CardBase2" parent="Board/TempUISetup" unique_id=1142647794 instance=ExtResource("2_0xm2m")]
 anchor_right = 0.109000005
 anchor_bottom = 0.30900002
@@ -97,14 +89,6 @@ offset_left = 2105.9998
 offset_top = 903.00024
 offset_right = 2146.72
 offset_bottom = 969.27655
-
-[node name="CardBase3" parent="Board/TempUISetup" unique_id=1904882482 instance=ExtResource("2_0xm2m")]
-anchor_right = 0.109000005
-anchor_bottom = 0.30900002
-offset_left = 52.000122
-offset_top = 24.000473
-offset_right = 92.72011
-offset_bottom = 90.27716
 
 [node name="CardBase9" parent="Board/TempUISetup" unique_id=953224550 instance=ExtResource("2_0xm2m")]
 anchor_right = 0.109000005
