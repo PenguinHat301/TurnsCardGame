@@ -1,81 +1,49 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="PackedScene" uid="uid://cpcvlo2b4al3i" path="res://Scenes/player.tscn" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cym1crtkrufii" path="res://Scenes/card_slot_2d.tscn" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bn84875k83g8k" path="res://Depreciated/Chimpy.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://b1b5fg8c07qoh" path="res://Scripts/turn_manager.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://cvpxxdhsf3k6j" path="res://Scripts/game_manager.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://x64lxr32ga7t" path="res://Scenes/player2.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node" unique_id=1823231389]
 
 [node name="GameManager" type="Node" parent="." unique_id=1584684658]
+script = ExtResource("1_lquwl")
 
 [node name="TurnManager" type="Node" parent="." unique_id=235612690]
+script = ExtResource("1_h2yge")
 
 [node name="Players" type="Node" parent="." unique_id=1558427259]
 
-[node name="Player" parent="Players" unique_id=225357707 instance=ExtResource("1_1bvp3")]
-position = Vector2(1245, 1139)
+[node name="Player1" parent="Players" unique_id=225357707 instance=ExtResource("1_1bvp3")]
+position = Vector2(1389, 1355)
+
+[node name="Player2" parent="Players" unique_id=992029447 instance=ExtResource("2_0xm2m")]
+position = Vector2(1389, 222)
 
 [node name="Board" type="Node2D" parent="." unique_id=1226733955]
-
-[node name="CardSlots" type="Node" parent="Board" unique_id=1332781353]
-
-[node name="CardSlot6" parent="Board/CardSlots" unique_id=1302931843 instance=ExtResource("1_h2yge")]
-position = Vector2(903.07007, 311.7849)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot7" parent="Board/CardSlots" unique_id=68115271 instance=ExtResource("1_h2yge")]
-position = Vector2(1223.0701, 310.7848)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot8" parent="Board/CardSlots" unique_id=1057415124 instance=ExtResource("1_h2yge")]
-position = Vector2(583.06934, 308.7849)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot9" parent="Board/CardSlots" unique_id=472038620 instance=ExtResource("1_h2yge")]
-position = Vector2(1543.0703, 310.78503)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot10" parent="Board/CardSlots" unique_id=1778382376 instance=ExtResource("1_h2yge")]
-position = Vector2(1863.0706, 309.7849)
-scale = Vector2(0.85, 0.85)
 
 [node name="TempUISetup" type="Node" parent="Board" unique_id=437797232]
 
 [node name="P2Score" type="Panel" parent="Board/TempUISetup" unique_id=669149322]
 modulate = Color(0.8627451, 0.03529412, 0.4862745, 1)
-offset_left = 2123.0
-offset_top = 542.0
-offset_right = 2399.0
-offset_bottom = 663.0
+offset_left = 2411.0
+offset_top = 638.0
+offset_right = 2687.0
+offset_bottom = 759.0
 
 [node name="P1Score" type="Panel" parent="Board/TempUISetup" unique_id=1062671766]
 modulate = Color(0, 0.7063952, 0.70643514, 1)
-offset_left = 2123.0
-offset_top = 662.0
-offset_right = 2399.0
-offset_bottom = 783.0
+offset_left = 2411.0
+offset_top = 758.0
+offset_right = 2687.0
+offset_bottom = 879.0
 
 [node name="FieldCardSlot" type="Panel" parent="Board/TempUISetup" unique_id=1882841478]
-offset_left = 39.0
-offset_top = 431.0
-offset_right = 319.0
-offset_bottom = 896.6842
-
-[node name="CardBase2" parent="Board/TempUISetup" unique_id=1142647794 instance=ExtResource("2_0xm2m")]
-anchor_right = 0.109000005
-anchor_bottom = 0.30900002
-offset_left = 2105.9998
-offset_top = 903.00024
-offset_right = 2146.72
-offset_bottom = 969.27655
-
-[node name="CardBase9" parent="Board/TempUISetup" unique_id=953224550 instance=ExtResource("2_0xm2m")]
-anchor_right = 0.109000005
-anchor_bottom = 0.30900002
-offset_left = 2105.9998
-offset_top = 23.000366
-offset_right = 2146.72
-offset_bottom = 89.276825
+offset_left = 295.0
+offset_top = 511.0
+offset_right = 575.0
+offset_bottom = 976.6842
 
 [node name="UI" type="Control" parent="." unique_id=45936382]
 layout_mode = 3
@@ -86,4 +54,4 @@ offset_bottom = 40.0
 [node name="GameCamera" type="Camera2D" parent="." unique_id=714661369]
 modulate = Color(0.3553136, 0.35531354, 0.35531357, 1)
 anchor_mode = 0
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.7, 0.7)

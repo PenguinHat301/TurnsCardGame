@@ -1,0 +1,31 @@
+extends Node
+class_name turnManager
+
+@onready var player_1: playerType = $"../Players/Player1"
+@onready var player_2: playerType = $"../Players/Player2"
+
+var curPlayerTurn: playerType
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var random = randi_range(0, 1)
+	if random:
+		curPlayerTurn == player_1
+		print("Go player 1!")
+	else:
+		curPlayerTurn == player_2
+		print("Go player 2!")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _end_turn() -> void:
+	if curPlayerTurn == player_1: # now P2 turn
+		curPlayerTurn = player_2
+	else:
+		curPlayerTurn = player_1 # now P1 turn
+	
+	# signals here later maybe

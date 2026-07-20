@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcp1lt8v6tolq"]
 
-[ext_resource type="Script" uid="uid://dghn8w3n3k1br" path="res://Scenes/player_board.gd" id="1_cx4i1"]
+[ext_resource type="Script" uid="uid://dghn8w3n3k1br" path="res://Scripts/player_board.gd" id="1_cx4i1"]
 [ext_resource type="PackedScene" uid="uid://cym1crtkrufii" path="res://Scenes/card_slot_2d.tscn" id="1_fjxxh"]
 
 [node name="PlayerBoard" type="Node2D" unique_id=1674644118]

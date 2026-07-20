@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://x64lxr32ga7t"]
+
+[ext_resource type="Script" uid="uid://cafvaiolbu2ta" path="res://Scripts/player.gd" id="1_tj0vx"]
+[ext_resource type="PackedScene" uid="uid://uki6yak7u6tv" path="res://Scenes/draw_pile.tscn" id="2_bhnal"]
+[ext_resource type="PackedScene" uid="uid://cmru2al5fusp4" path="res://Scenes/player_hand.tscn" id="3_uqwy3"]
+[ext_resource type="PackedScene" uid="uid://dcp1lt8v6tolq" path="res://Scenes/player_board.tscn" id="4_8caby"]
+
+[node name="Player" type="Node2D" unique_id=225357707]
+script = ExtResource("1_tj0vx")
+
+[node name="DrawPile" parent="." unique_id=1350543172 instance=ExtResource("2_bhnal")]
+position = Vector2(947, -18)
+
+[node name="PlayerHand" parent="." unique_id=2058784465 instance=ExtResource("3_uqwy3")]
+
+[node name="PlayerBoard" parent="." unique_id=1674644118 instance=ExtResource("4_8caby")]
+position = Vector2(0, 400)

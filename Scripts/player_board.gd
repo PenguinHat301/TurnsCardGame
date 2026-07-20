@@ -1,4 +1,5 @@
 extends Node2D
+class_name player_board
 
 @onready var card_slot_0: card_slot_2D = $CardSlot
 @onready var card_slot_1: card_slot_2D = $CardSlot2
@@ -18,3 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _owns_slot(slot: card_slot_2D) -> bool:
+	return slot in slot_list

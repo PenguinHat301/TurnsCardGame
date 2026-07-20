@@ -18,7 +18,7 @@ var isDragging: bool
 var isDraggable: bool
 var curDragOffset: Vector2 # used for moving the card
 
-signal cardSnapping(curCard: card_base_2D)
+signal cardSnapping(curCard: card_base_2D, curSlot: card_slot_2D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -69,7 +69,7 @@ func _Card_Snap_Behavior() -> bool:
 			self.isDraggable = false
 			self.z_index = 5
 			print("Snap, card is moving")
-			cardSnapping.emit(self)
+			cardSnapping.emit(self, cardSlot)
 			return true
 		else:
 			print("slot is occupied")
@@ -95,5 +95,4 @@ func _on_hover_drag_area_input_event(viewport: Node, event: InputEvent, shape_id
 				z_index = 0
 				GeneralManager.draggingCard = null
 				curDragOffset = Vector2.ZERO
-				if !_Card_Snap_Behavior():
-					global_position = originalPosition
+				_Card_Snap_Behavior()
