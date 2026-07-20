@@ -12,13 +12,13 @@ var snap_area_slot: Area2D
 var cardSlot: card_slot_2D
 var overlappingAreas: Array[Area2D]
 
-# var current location?
-var originalPosition: Vector2 
+var originalPosition: Vector2 #position it should snap back to
 var isHovered: bool
 var isDragging: bool
 var isDraggable: bool
 var curDragOffset: Vector2 # used for moving the card
 
+signal cardSnapping(curCard: card_base_2D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,14 +62,14 @@ func _Card_Snap_Behavior() -> bool:
 	overlappingAreas = snap_area_self.get_overlapping_areas()
 	if !overlappingAreas.is_empty():
 		snap_area_slot = overlappingAreas[0]
-		print("detecting area")
 		cardSlot = snap_area_slot.get_parent()
 		if cardSlot.occupied == false:
 			cardSlot.occupied = true
 			self.global_position = cardSlot.global_position
 			self.isDraggable = false
 			self.z_index = 5
-			print("Snap")
+			print("Snap, card is moving")
+			cardSnapping.emit(self)
 			return true
 		else:
 			print("slot is occupied")

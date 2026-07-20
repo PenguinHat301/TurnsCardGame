@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cafvaiolbu2ta" path="res://Scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://uki6yak7u6tv" path="res://Scenes/draw_pile.tscn" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://cmru2al5fusp4" path="res://Scenes/player_hand.tscn" id="3_sweqy"]
+[ext_resource type="PackedScene" uid="uid://dcp1lt8v6tolq" path="res://Scenes/player_board.tscn" id="4_vgqql"]
 
 [node name="Player" type="Node2D" unique_id=225357707]
 script = ExtResource("1_i3pqv")
@@ -11,3 +12,6 @@ script = ExtResource("1_i3pqv")
 position = Vector2(-1084, -18)
 
 [node name="PlayerHand" parent="." unique_id=2058784465 instance=ExtResource("3_sweqy")]
+
+[node name="PlayerBoard" parent="." unique_id=1674644118 instance=ExtResource("4_vgqql")]
+position = Vector2(0, -400)

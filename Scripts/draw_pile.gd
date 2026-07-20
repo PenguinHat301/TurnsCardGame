@@ -9,12 +9,16 @@ const CARD_MODEL = preload("res://Scenes/card_base_2D.tscn")
 var cardList: Array[card_base_2D]
 var numCards: int = 0
 @onready var num_card_label: Label = $UI/NumCardLabel
-signal whereToDraw(data: CardData)
+var connectedHand: player_hand
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+
+
+func _connect_to_hand(funcConnectedHand: player_hand):
+	connectedHand = funcConnectedHand
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,9 +29,7 @@ func _draw_card() -> void:
 	if numCards == 0:
 		return
 	var drawnCard = cardList.pop_front()
-	whereToDraw.emit()
-	#self.add_child(drawnCard)
-	#drawnCard.global_position = Vector2(1250,1250)
+	connectedHand._add_card_hand(drawnCard)
 	numCards = numCards - 1
 
 # add a card to the pile

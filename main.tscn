@@ -19,26 +19,6 @@ position = Vector2(1245, 1139)
 
 [node name="CardSlots" type="Node" parent="Board" unique_id=1332781353]
 
-[node name="CardSlot" parent="Board/CardSlots" unique_id=678445540 instance=ExtResource("1_h2yge")]
-position = Vector2(903.07007, 711.78503)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot2" parent="Board/CardSlots" unique_id=358057011 instance=ExtResource("1_h2yge")]
-position = Vector2(1223.0701, 710.7849)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot3" parent="Board/CardSlots" unique_id=1448963733 instance=ExtResource("1_h2yge")]
-position = Vector2(583.06934, 708.78503)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot4" parent="Board/CardSlots" unique_id=2068004488 instance=ExtResource("1_h2yge")]
-position = Vector2(1543.0703, 710.78516)
-scale = Vector2(0.85, 0.85)
-
-[node name="CardSlot5" parent="Board/CardSlots" unique_id=1170892396 instance=ExtResource("1_h2yge")]
-position = Vector2(1863.0706, 709.78503)
-scale = Vector2(0.85, 0.85)
-
 [node name="CardSlot6" parent="Board/CardSlots" unique_id=1302931843 instance=ExtResource("1_h2yge")]
 position = Vector2(903.07007, 311.7849)
 scale = Vector2(0.85, 0.85)

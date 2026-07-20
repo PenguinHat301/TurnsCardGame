@@ -1,8 +1,9 @@
 extends Node2D
+class_name player_hand
 
 var linkedDrawPile
 
-#dimension if important for later:
+#dimension of hand if important for later:
 # x = 1500
 # y = 300
 
@@ -21,25 +22,30 @@ func _process(delta: float) -> void:
 func _add_card_hand(newCard: card_base_2D) -> void:
 	cardList.append(newCard)
 	self.add_child(newCard)
+	newCard.cardSnapping.connect(_on_card_snap)
 	numCards = numCards + 1
 	_update_hand_visual()
 
-# where is it going?
-func _remove_card_hand(newCard: card_base_2D) -> void:
+func _remove_card_hand(ridCard: card_base_2D) -> void:
+	cardList.erase(ridCard)
 	numCards = numCards - 1
-	pass
+	_update_hand_visual()
 
 
-@export var max_hand_width: float = 1400.0
-@export var normal_spacing: float = 150.0
-@export var minimum_spacing: float = 60.0
+func _on_card_snap(cardPlayed: card_base_2D):
+	_remove_card_hand(cardPlayed)
+
+
+@export var max_hand_width: float = 1300
+@export var normal_spacing: float = 210
+@export var minimum_spacing: float = 100.0
 func _update_hand_visual() -> void:
 	var curSpacing = normal_spacing
 	if numCards * normal_spacing > max_hand_width:
 		curSpacing = max_hand_width / numCards
-	var total_width = numCards * curSpacing
+	var total_width = (numCards-1) * curSpacing
 	var start_x = -total_width / 2
 	for cur in range(numCards):
 		var card = cardList[cur]
 		card.position = Vector2(start_x + cur * curSpacing, 0)
-		
+		card.originalPosition = card.global_position

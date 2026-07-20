@@ -5,9 +5,17 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_player_connect_to_hand()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+
+func _player_connect_to_hand() -> void:
+	draw_pile._connect_to_hand(player_hand)
+
+
+#func _player_connect_to_board() -> void:
+#	player_board._connect_to_board(...)
