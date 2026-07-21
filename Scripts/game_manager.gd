@@ -46,6 +46,7 @@ func _request_end_turn(curPlayer: playerType) -> void:
 	# your turn?
 	if curPlayer != turn_manager.curPlayerTurn:
 		print("not your turn (end turn)")
+		return
 	_game_end_turn()
 
 
