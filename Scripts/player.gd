@@ -6,6 +6,7 @@ class_name playerType
 @onready var player_board:  player_board = $PlayerBoard
 @onready var end_turn: Button = $EndTurn
 
+@export var turnsLeft = 10
 
 # one last passup to game manager
 signal on_card_snap_cont(cardPlayed: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType)

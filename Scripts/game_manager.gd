@@ -11,12 +11,14 @@ class_name gameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	await get_tree().process_frame
+	_on_game_start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_game_start() -> void:
+	for i in 5:
+		player_1.draw_pile._draw_card()
+		player_2.draw_pile._draw_card()
 
 
 func _request_card_play(cardRequest: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType) -> void:

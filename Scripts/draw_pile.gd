@@ -1,6 +1,9 @@
 extends Node2D
 class_name draw_pile
 
+# for testing, holds number of current complete resources
+var numTotalCards = 2
+
 const CARD_MODEL = preload("res://Scenes/card_base_2D.tscn")
 
 # TO DO: add player object class
@@ -14,7 +17,11 @@ var connectedHand: player_hand
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# temporary, add 10 random cards to each deck on ready
+	for i in 10:
+		var random = randi_range(0, 1)
+		randomize()
+		_add_card(random)
 
 
 func _connect_to_hand(funcConnectedHand: player_hand):
@@ -47,7 +54,8 @@ func _shuffle() -> void:
 # for testing below:
 # test add
 func _on_testing_button_pressed() -> void:
-	_add_card(0)
+	var whatCard = randi_range(0, numTotalCards - 1)
+	_add_card(whatCard)
 
 # test draw
 func _on_test_draw_pressed() -> void:
