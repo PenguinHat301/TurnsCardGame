@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cl44glexp6nl8"]
+
+[node name="EndTurn" type="Button" unique_id=1778887804]
+offset_right = 31.0
+offset_bottom = 14.0
+scale = Vector2(5, 5)
+text = "END TURN"

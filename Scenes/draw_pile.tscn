@@ -22,10 +22,9 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_7ms5k")
 
 [node name="SlotShape" type="Area2D" parent="." unique_id=1981690235]
-visible = false
 position = Vector2(-124.44443, -201.44444)
 scale = Vector2(1.0000001, 1.0000001)
-collision_layer = 4
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlotShape" unique_id=603428642]
 position = Vector2(125.00005, 201.17656)

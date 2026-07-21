@@ -11,7 +11,7 @@ var cardList: Array[card_base_2D] = []
 var numCards: int = 0
 const CENTER = Vector2(0.0, 0.0)
 
-signal _on_card_snap_cont(cardPlayed: card_base_2D, slotWanted: card_slot_2D)
+signal _on_card_snap_cont(cardPlayed: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,9 +35,9 @@ func _remove_card_hand(ridCard: card_base_2D) -> void:
 
 
 
-func _on_card_snap(cardPlayed: card_base_2D, slotWanted: card_slot_2D):
+func _on_card_snap(cardPlayed: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType):
 	print("gets to hand call up")
-	_on_card_snap_cont.emit(cardPlayed)
+	_on_card_snap_cont.emit(cardPlayed, slotWanted, curPlayer)
 
 
 @export var max_hand_width: float = 1300

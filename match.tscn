@@ -1,24 +1,26 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="PackedScene" uid="uid://cpcvlo2b4al3i" path="res://Scenes/player.tscn" id="1_1bvp3"]
-[ext_resource type="Script" uid="uid://b1b5fg8c07qoh" path="res://Scripts/turn_manager.gd" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://cvpxxdhsf3k6j" path="res://Scripts/game_manager.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://x64lxr32ga7t" path="res://Scenes/player2.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bsfrdtxaqrwr4" path="res://match.gd" id="1_2n26j"]
+[ext_resource type="Script" uid="uid://cvpxxdhsf3k6j" path="res://Scripts/game_manager.gd" id="1_xkuxl"]
+[ext_resource type="Script" uid="uid://b1b5fg8c07qoh" path="res://Scripts/turn_manager.gd" id="2_2n26j"]
+[ext_resource type="PackedScene" uid="uid://cpcvlo2b4al3i" path="res://Scenes/player.tscn" id="3_nm5tq"]
+[ext_resource type="PackedScene" uid="uid://x64lxr32ga7t" path="res://Scenes/player2.tscn" id="4_8pbkx"]
 
-[node name="Main" type="Node" unique_id=1823231389]
+[node name="Match" type="Node" unique_id=1823231389]
+script = ExtResource("1_2n26j")
 
 [node name="GameManager" type="Node" parent="." unique_id=1584684658]
-script = ExtResource("1_lquwl")
+script = ExtResource("1_xkuxl")
 
 [node name="TurnManager" type="Node" parent="." unique_id=235612690]
-script = ExtResource("1_h2yge")
+script = ExtResource("2_2n26j")
 
 [node name="Players" type="Node" parent="." unique_id=1558427259]
 
-[node name="Player1" parent="Players" unique_id=225357707 instance=ExtResource("1_1bvp3")]
+[node name="Player1" parent="Players" unique_id=225357707 instance=ExtResource("3_nm5tq")]
 position = Vector2(1389, 1355)
 
-[node name="Player2" parent="Players" unique_id=992029447 instance=ExtResource("2_0xm2m")]
+[node name="Player2" parent="Players" unique_id=992029447 instance=ExtResource("4_8pbkx")]
 position = Vector2(1389, 222)
 
 [node name="Board" type="Node2D" parent="." unique_id=1226733955]
@@ -27,17 +29,17 @@ position = Vector2(1389, 222)
 
 [node name="P2Score" type="Panel" parent="Board/TempUISetup" unique_id=669149322]
 modulate = Color(0.8627451, 0.03529412, 0.4862745, 1)
-offset_left = 2411.0
-offset_top = 638.0
-offset_right = 2687.0
-offset_bottom = 759.0
+offset_left = 2347.0
+offset_top = 667.0
+offset_right = 2623.0
+offset_bottom = 788.0
 
 [node name="P1Score" type="Panel" parent="Board/TempUISetup" unique_id=1062671766]
 modulate = Color(0, 0.7063952, 0.70643514, 1)
-offset_left = 2411.0
-offset_top = 758.0
-offset_right = 2687.0
-offset_bottom = 879.0
+offset_left = 2347.0
+offset_top = 787.0
+offset_right = 2623.0
+offset_bottom = 908.0
 
 [node name="FieldCardSlot" type="Panel" parent="Board/TempUISetup" unique_id=1882841478]
 offset_left = 295.0

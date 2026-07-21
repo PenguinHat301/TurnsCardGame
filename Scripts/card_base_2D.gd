@@ -58,25 +58,16 @@ func _on_hover_mouse_exited() -> void:
 
 
 # True if it snaps, false if it returns to original spot
-func _Card_Snap_Behavior() -> bool:
+func _Card_Snap_Behavior() -> void:
 	overlappingAreas = snap_area_self.get_overlapping_areas()
 	if !overlappingAreas.is_empty():
 		snap_area_slot = overlappingAreas[0]
 		cardSlot = snap_area_slot.get_parent()
-		if cardSlot.occupied == false:
-			cardSlot.occupied = true
-			self.global_position = cardSlot.global_position
-			self.isDraggable = false
-			self.z_index = 5
-			print("Snap, card is moving")
-			cardSnapping.emit(self, cardSlot)
-			return true
-		else:
-			print("slot is occupied")
-			return false
-	else: 
+		print("Snap, starting signal chain for checking")
+		cardSnapping.emit(self, cardSlot, get_parent().get_parent())
 		overlappingAreas.remove_at(0)
-		return false
+	else:
+		_snap_back(self)
 
 
 # area for hovering and dragging
@@ -96,3 +87,7 @@ func _on_hover_drag_area_input_event(viewport: Node, event: InputEvent, shape_id
 				GeneralManager.draggingCard = null
 				curDragOffset = Vector2.ZERO
 				_Card_Snap_Behavior()
+
+
+func _snap_back(cardSnapping: card_base_2D) -> void:
+	global_position = originalPosition

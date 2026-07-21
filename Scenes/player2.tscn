@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://uki6yak7u6tv" path="res://Scenes/draw_pile.tscn" id="2_bhnal"]
 [ext_resource type="PackedScene" uid="uid://cmru2al5fusp4" path="res://Scenes/player_hand.tscn" id="3_uqwy3"]
 [ext_resource type="PackedScene" uid="uid://dcp1lt8v6tolq" path="res://Scenes/player_board.tscn" id="4_8caby"]
+[ext_resource type="PackedScene" uid="uid://cl44glexp6nl8" path="res://Scenes/end_turn.tscn" id="5_5fhls"]
 
 [node name="Player" type="Node2D" unique_id=225357707]
 script = ExtResource("1_tj0vx")
@@ -15,3 +16,11 @@ position = Vector2(947, -18)
 
 [node name="PlayerBoard" parent="." unique_id=1674644118 instance=ExtResource("4_8caby")]
 position = Vector2(0, 400)
+
+[node name="EndTurn" parent="." unique_id=1778887804 instance=ExtResource("5_5fhls")]
+offset_left = 872.0002
+offset_top = 227.99997
+offset_right = 962.0002
+offset_bottom = 259.0
+
+[connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

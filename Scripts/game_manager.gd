@@ -1,4 +1,5 @@
 extends Node
+class_name gameManager
 
 @onready var player_1: playerType = $"../Players/Player1"
 @onready var player_2: playerType = $"../Players/Player2"
@@ -18,27 +19,44 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _request_card_play(player: playerType) -> bool:
+func _request_card_play(cardRequest: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType) -> void:
 	# your turn?
+	if curPlayer != turn_manager.curPlayerTurn:
+		print("not your turn (playing card)")
+		cardRequest._snap_back(cardRequest)
+		return
 	# your slot?
+	if !curPlayer.player_board._owns_slot(slotWanted):
+		print("not your slot")
+		cardRequest._snap_back(cardRequest)
+		return
 	# occupied?
-	return false
+	if slotWanted.occupied == true:
+		print("slot occupied")
+		cardRequest._snap_back(cardRequest)
+		return
+	cardRequest.isDraggable = false
+	curPlayer.player_board._place_in_slot(cardRequest, slotWanted)
+	curPlayer.player_hand._remove_card_hand(cardRequest)
 
 
-func _request_end_turn(player: playerType) -> bool:
-	return false
+func _request_end_turn(curPlayer: playerType) -> void:
+	# your turn?
+	if curPlayer != turn_manager.curPlayerTurn:
+		print("not your turn (end turn)")
+	_game_end_turn()
 
 
-func _game_end_turn() -> bool:
+func _game_end_turn() -> void:
 	turn_manager._end_turn()
-	return false
+	return
 
 
 # Will ensure certain special cards are activating their
-# start of turn behavior
+# start of turn behavior, and drawing one card.
 # for Ex: on start of turn, deal 1 damage, etc...
 func _on_turn_start(player: playerType) -> void:
-	pass
+	player.draw_pile._draw_card()
 
 
 # Will ensure certain special cards are activating their
