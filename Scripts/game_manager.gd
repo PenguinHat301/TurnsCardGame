@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func _on_game_start() -> void:
-	for i in 5:
+	for i in 3:
 		player_1.draw_pile._draw_card()
 		player_2.draw_pile._draw_card()
 		# connects the boards to eachother
@@ -53,7 +53,7 @@ func _request_end_turn(curPlayer: playerType) -> void:
 
 
 func _game_end_turn() -> void:
-	turn_manager._end_turn()
+	turn_manager._end_turn() # switches turn ownership in code
 	return
 
 
@@ -68,6 +68,7 @@ func _on_turn_start(player: playerType) -> void:
 # start of turn behavior
 # for Ex: on end of turn, deal 1 damage, etc...
 func _on_turn_end(player: playerType) -> void:
+	player.player_board._card_attack_wave()
 	pass
 
 

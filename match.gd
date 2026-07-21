@@ -17,7 +17,3 @@ func _ready() -> void:
 	
 	player_1.request_turn_end.connect(game_manager._request_end_turn)
 	player_2.request_turn_end.connect(game_manager._request_end_turn)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

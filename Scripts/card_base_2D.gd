@@ -44,7 +44,7 @@ func _initialize(cardData: CardData):
 	curHealth = cardData.healthStat.to_int()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if self.isDragging:
 		self.global_position = get_global_mouse_position() - curDragOffset
 
@@ -76,7 +76,7 @@ func _Card_Snap_Behavior() -> void:
 
 
 # area for hovering and dragging
-func _on_hover_drag_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_hover_drag_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if GeneralManager.draggingCard != null and GeneralManager.draggingCard != self:
 		return
 	if event is InputEventMouseButton:
@@ -94,5 +94,27 @@ func _on_hover_drag_area_input_event(viewport: Node, event: InputEvent, shape_id
 				_Card_Snap_Behavior()
 
 
-func _snap_back(cardSnapping: card_base_2D) -> void:
+func _snap_back(_cardSnapping: card_base_2D) -> void:
 	global_position = originalPosition
+
+
+# returns the current attack value of the card 
+func _attack_info() -> int:
+	return curAttack
+
+# returns a bool so that the card slot can communicate if
+# the card was killed. may help with cards that strengthen on
+# kill, etc... return true if killed
+func _take_damage(damageTaken: int) -> bool:
+	curHealth = curHealth - damageTaken
+	if curHealth <= 0:
+		_card_killed()
+		return true # card died
+	else:
+		$UI/HealthLabel.text = str(curHealth)
+		return false # card did not die
+
+
+func _card_killed() -> void:
+	self.queue_free()
+	# make sure to set the slot to no longer be occupied

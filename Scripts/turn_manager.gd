@@ -18,11 +18,6 @@ func _ready() -> void:
 		print("Go player 2!")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _end_turn() -> void:
 	if curPlayerTurn == player_1: # now P2 turn
 		curPlayerTurn = player_2

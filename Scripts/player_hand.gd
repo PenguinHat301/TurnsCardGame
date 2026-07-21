@@ -17,10 +17,6 @@ signal _on_card_snap_cont(cardPlayed: card_base_2D, slotWanted: card_slot_2D, cu
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _add_card_hand(newCard: card_base_2D) -> void:
 	cardList.append(newCard)
 	self.add_child(newCard)

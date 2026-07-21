@@ -6,7 +6,7 @@ class_name playerType
 @onready var player_board:  player_board = $PlayerBoard
 @onready var end_turn: Button = $EndTurn
 
-@export var turnsLeft = 10
+@export var turnsLeft = 20
 
 # one last passup to game manager
 signal on_card_snap_cont(cardPlayed: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType)
@@ -18,17 +18,9 @@ func _ready() -> void:
 	player_hand._on_card_snap_cont.connect(_board_valid_check)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-
 func _player_connect_to_hand() -> void:
 	draw_pile._connect_to_hand(player_hand)
 
-
-#func _player_connect_to_board() -> void:
-#	player_hand._connect_to_board(...)
 
 func _board_valid_check(cardRequested: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType) -> void:
 	on_card_snap_cont.emit(cardRequested, slotWanted, curPlayer)
