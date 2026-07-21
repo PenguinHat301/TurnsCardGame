@@ -30,3 +30,10 @@ func _place_in_slot(cardPlayed: card_base_2D, slot: card_slot_2D):
 	slot_list[curSlot].occupied = true
 	cardPlayed.global_position = slot.global_position
 	cardPlayed.z_index = 5
+
+func _connect_opposing_slots(opposingBoard: player_board) -> void:
+	for i in 5:
+		var curSlot = self.slot_list[i]
+		var curOpposingSlot = opposingBoard.slot_list[i]
+		curSlot.opposingSlot = curOpposingSlot
+		curOpposingSlot.opposingSlot = curSlot

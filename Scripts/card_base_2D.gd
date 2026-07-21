@@ -20,6 +20,9 @@ var curDragOffset: Vector2 # used for moving the card
 
 signal cardSnapping(curCard: card_base_2D, curSlot: card_slot_2D)
 
+var curAttack: int
+var curHealth: int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ID = 0 # temporary placeholder
@@ -37,6 +40,8 @@ func _initialize(cardData: CardData):
 	$UI/Description.text = cardData.description
 	$UI/HealthLabel.text = cardData.healthStat
 	$UI/AttackLabel.text = cardData.attackStat
+	curAttack = cardData.attackStat.to_int()
+	curHealth = cardData.healthStat.to_int()
 
 
 func _process(delta: float) -> void:
