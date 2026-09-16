@@ -5,9 +5,8 @@ class_name playerType
 @onready var player_hand:  player_hand = $PlayerHand
 @onready var player_board:  player_board = $PlayerBoard
 @onready var end_turn: Button = $EndTurn
-@onready var turn_count: Label = $TurnCount
 
-@export var turnsLeft = 20 # Works as a health bar and turn count in one
+@export var turnsLeft = 20
 
 # one last passup to game manager
 signal on_card_snap_cont(cardPlayed: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType)
@@ -17,7 +16,7 @@ signal request_turn_end(curPlayer)
 func _ready() -> void:
 	_player_connect_to_hand()
 	player_hand._on_card_snap_cont.connect(_board_valid_check)
-	player_board.takeTurnDamage.connect(_take_turn_damage)
+
 
 func _player_connect_to_hand() -> void:
 	draw_pile._connect_to_hand(player_hand)
@@ -28,12 +27,15 @@ func _board_valid_check(cardRequested: card_base_2D, slotWanted: card_slot_2D, c
 	print ("checking")
 	pass
 
+<<<<<<< HEAD
 func _take_turn_damage():
 	turnsLeft = turnsLeft - 1
 	turn_count.text = str(turnsLeft)
 
 func _deal_turn_damage():
 	
+=======
+>>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
 
 func _on_end_turn_pressed() -> void:
 	request_turn_end.emit(self)

@@ -49,7 +49,10 @@ func _card_attack_wave() -> void:
 		# if no opposing slot
 		if cur.opposingSlot.occupied == false:
 			# TODO - Make it so players take damage
+<<<<<<< HEAD
 			
+=======
+>>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
 			continue 
 		# opposing slot not empty
 		if cur.opposingSlot.cardHeld._take_damage(cardAttack):
