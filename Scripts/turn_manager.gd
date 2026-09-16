@@ -19,6 +19,7 @@ func _ready() -> void:
 
 
 func _end_turn() -> void:
+	curPlayerTurn._take_turn_damage()
 	if curPlayerTurn == player_1: # now P2 turn
 		curPlayerTurn = player_2
 		game_manager._on_turn_end(player_1)
@@ -27,5 +28,3 @@ func _end_turn() -> void:
 		curPlayerTurn = player_1 # now P1 turn
 		game_manager._on_turn_end(player_2)
 		game_manager._on_turn_start(player_1)
-	
-	# signals here later maybe

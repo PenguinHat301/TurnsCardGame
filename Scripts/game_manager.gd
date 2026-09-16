@@ -20,7 +20,7 @@ func _on_game_start() -> void:
 		player_1.draw_pile._draw_card()
 		player_2.draw_pile._draw_card()
 		# connects the boards to eachother
-		player_1.player_board._connect_opposing_slots(player_2.player_board)
+	player_1.player_board._connect_opposing_slots(player_2.player_board)
 
 
 func _request_card_play(cardRequest: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType) -> void:
@@ -51,6 +51,14 @@ func _request_end_turn(curPlayer: playerType) -> void:
 		return
 	_game_end_turn()
 
+# The caller is the one DEALING damage
+func _on_request_doing_damage(playerRequester: playerType):
+	if playerRequester == player_1:
+		player_2._take_turn_damage()
+	else:
+			player_1._take_turn_damage()
+	pass
+
 
 func _game_end_turn() -> void:
 	turn_manager._end_turn() # switches turn ownership in code
@@ -72,5 +80,5 @@ func _on_turn_end(player: playerType) -> void:
 	pass
 
 
-func _end_game(player: playerType) -> void:
-	pass
+func _end_game(LosingPlayer: playerType) -> void:
+	get_tree().reload_current_scene()

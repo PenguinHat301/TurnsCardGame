@@ -17,3 +17,9 @@ func _ready() -> void:
 	
 	player_1.request_turn_end.connect(game_manager._request_end_turn)
 	player_2.request_turn_end.connect(game_manager._request_end_turn)
+	
+	player_1.request_doing_damage.connect(game_manager._on_request_doing_damage)
+	player_2.request_doing_damage.connect(game_manager._on_request_doing_damage)
+	
+	player_1.losing_player.connect(game_manager._end_game)
+	player_2.losing_player.connect(game_manager._end_game)

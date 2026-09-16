@@ -48,8 +48,7 @@ func _card_attack_wave() -> void:
 		cardAttack = cardInSlot._attack_info()
 		# if no opposing slot
 		if cur.opposingSlot.occupied == false:
-			# TODO - Make it so players take damage
-			
+			cur.playerOwner._deal_turn_damage()
 			continue 
 		# opposing slot not empty
 		if cur.opposingSlot.cardHeld._take_damage(cardAttack):

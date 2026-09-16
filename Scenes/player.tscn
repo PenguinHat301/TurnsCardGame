@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cmru2al5fusp4" path="res://Scenes/player_hand.tscn" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://dcp1lt8v6tolq" path="res://Scenes/player_board.tscn" id="4_vgqql"]
 [ext_resource type="PackedScene" uid="uid://cl44glexp6nl8" path="res://Scenes/end_turn.tscn" id="5_fkybt"]
+[ext_resource type="Script" uid="uid://cqghntm5sxcwp" path="res://Scripts/turn_count_label.gd" id="6_x3wgy"]
 
 [node name="Player" type="Node2D" unique_id=225357707]
 script = ExtResource("1_i3pqv")
-turnsLeft = null
 
 [node name="DrawPile" parent="." unique_id=1350543172 instance=ExtResource("2_hqtel")]
 position = Vector2(-1084, -18)
@@ -30,5 +30,6 @@ offset_top = -226.0
 offset_right = 74.0
 offset_bottom = -188.0
 text = "AAAAAAAAAAAAA"
+script = ExtResource("6_x3wgy")
 
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
