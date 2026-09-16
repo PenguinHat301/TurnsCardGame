@@ -24,7 +24,6 @@ offset_top = -389.0
 offset_right = 964.00006
 offset_bottom = -358.0
 
-<<<<<<< HEAD
 [node name="TurnCount" type="Label" parent="." unique_id=606406629]
 offset_left = -74.0
 offset_top = -226.0
@@ -32,8 +31,4 @@ offset_right = 74.0
 offset_bottom = -188.0
 text = "AAAAAAAAAAAAA"
 
-=======
->>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
-=======
->>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

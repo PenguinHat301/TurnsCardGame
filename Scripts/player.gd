@@ -27,17 +27,11 @@ func _board_valid_check(cardRequested: card_base_2D, slotWanted: card_slot_2D, c
 	print ("checking")
 	pass
 
-<<<<<<< HEAD
 func _take_turn_damage():
 	turnsLeft = turnsLeft - 1
-	turn_count.text = str(turnsLeft)
 
 func _deal_turn_damage():
-	
-=======
->>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
-=======
->>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
+	pass
 
 func _on_end_turn_pressed() -> void:
 	request_turn_end.emit(self)
