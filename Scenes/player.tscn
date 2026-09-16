@@ -34,4 +34,6 @@ text = "AAAAAAAAAAAAA"
 
 =======
 >>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
+=======
+>>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

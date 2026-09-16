@@ -50,7 +50,9 @@ func _card_attack_wave() -> void:
 		if cur.opposingSlot.occupied == false:
 			# TODO - Make it so players take damage
 <<<<<<< HEAD
+<<<<<<< HEAD
 			
+=======
 =======
 >>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
 			continue 

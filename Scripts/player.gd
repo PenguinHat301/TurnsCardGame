@@ -36,6 +36,8 @@ func _deal_turn_damage():
 	
 =======
 >>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
+=======
+>>>>>>> parent of 9aaf937 (Fixed hover, working on turn count display)
 
 func _on_end_turn_pressed() -> void:
 	request_turn_end.emit(self)
