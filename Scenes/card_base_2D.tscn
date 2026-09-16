@@ -10,7 +10,7 @@
 size = Vector2(91.250015, 205)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pn84"]
-size = Vector2(148.12509, 275.00015)
+size = Vector2(250.00003, 400.00006)
 
 [node name="card_base_2D" type="Node2D" unique_id=953226452]
 scale = Vector2(0.8, 0.8)
@@ -106,8 +106,7 @@ collision_mask = 0
 collision_priority = 2.0
 
 [node name="HoverDragShape" type="CollisionShape2D" parent="HoverDragArea" unique_id=506978843]
-position = Vector2(124.99094, 197.50009)
-scale = Vector2(0.9999998, 0.9999998)
+position = Vector2(125.00005, 198.75008)
 shape = SubResource("RectangleShape2D_3pn84")
 
 [connection signal="input_event" from="HoverDragArea" to="." method="_on_hover_drag_area_input_event"]

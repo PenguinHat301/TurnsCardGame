@@ -50,17 +50,14 @@ func _process(_delta: float) -> void:
 
 
 func _on_hover_mouse_entered() -> void:
-	print("hover mouse entered")
-	if (GeneralManager.draggingCard != null and GeneralManager.draggingCard != self) or (GeneralManager.hoveringCard != null):
+	if GeneralManager.draggingCard != null and GeneralManager.draggingCard != self:
 		return
-	GeneralManager.hoveringCard = self
+	
 	self.z_index = 100
 	self.scale = Vector2(1.0,1.0)
 
 
 func _on_hover_mouse_exited() -> void:
-	print("hover mouse exited")
-	GeneralManager.hoveringCard = null
 	self.z_index = 5
 	self.scale = Vector2(0.8,0.8)
 
@@ -80,7 +77,7 @@ func _Card_Snap_Behavior() -> void:
 
 # area for hovering and dragging
 func _on_hover_drag_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if (GeneralManager.draggingCard != null and GeneralManager.draggingCard != self) or GeneralManager.hoveringCard != self:
+	if GeneralManager.draggingCard != null and GeneralManager.draggingCard != self:
 		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
