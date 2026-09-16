@@ -10,6 +10,7 @@ class_name player_board
 signal takeTurnDamage
 signal dealTurnDamage
 
+=======
 var slot_list: Array[card_slot_2D] 
 
 
