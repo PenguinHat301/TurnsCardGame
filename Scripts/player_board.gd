@@ -7,7 +7,8 @@ class_name player_board
 @onready var card_slot_3: card_slot_2D = $CardSlot4
 @onready var card_slot_4: card_slot_2D = $CardSlot5
 
-signal takeTurnDamage(playerType)
+signal takeTurnDamage
+signal dealTurnDamage
 
 var slot_list: Array[card_slot_2D] 
 
@@ -16,7 +17,6 @@ var slot_list: Array[card_slot_2D]
 func _ready() -> void:
 	slot_list = \
 	[card_slot_0, card_slot_1, card_slot_2, card_slot_3, card_slot_4]
-	# connect the signal to unique game manager
 
 
 func _owns_slot(slot: card_slot_2D) -> bool:
@@ -49,7 +49,7 @@ func _card_attack_wave() -> void:
 		# if no opposing slot
 		if cur.opposingSlot.occupied == false:
 			# TODO - Make it so players take damage
-			takeTurnDamage.emit(self.get_parent()) # passes up which player it is to game manager
+			
 			continue 
 		# opposing slot not empty
 		if cur.opposingSlot.cardHeld._take_damage(cardAttack):

@@ -32,6 +32,8 @@ func _take_turn_damage():
 	turnsLeft = turnsLeft - 1
 	turn_count.text = str(turnsLeft)
 
+func _deal_turn_damage():
+	
 
 func _on_end_turn_pressed() -> void:
 	request_turn_end.emit(self)

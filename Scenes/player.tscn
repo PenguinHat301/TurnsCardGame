@@ -8,6 +8,7 @@
 
 [node name="Player" type="Node2D" unique_id=225357707]
 script = ExtResource("1_i3pqv")
+turnsLeft = null
 
 [node name="DrawPile" parent="." unique_id=1350543172 instance=ExtResource("2_hqtel")]
 position = Vector2(-1084, -18)
@@ -28,5 +29,6 @@ offset_left = -74.0
 offset_top = -226.0
 offset_right = 74.0
 offset_bottom = -188.0
+text = "AAAAAAAAAAAAA"
 
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
