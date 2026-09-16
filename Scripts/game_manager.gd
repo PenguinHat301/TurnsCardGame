@@ -20,8 +20,8 @@ func _on_game_start() -> void:
 		player_1.draw_pile._draw_card()
 		player_2.draw_pile._draw_card()
 		# connects the boards to eachother
-		player_1.player_board._connect_opposing_slots(player_2.player_board)
-
+	player_1.player_board._connect_opposing_slots(player_2.player_board)
+	
 
 func _request_card_play(cardRequest: card_base_2D, slotWanted: card_slot_2D, curPlayer: playerType) -> void:
 	# your turn?
